@@ -145,18 +145,6 @@ main {
     animation-timeline: view();
     animation-range-end: 140vh;
 }
-.wrapper-height {
-    animation: increase ease forwards;
-    animation-timeline: view();
-    animation-range-start: cover 20vh;
-    animation-range-end: 130vh;
-    animation-delay: 10000ms;
-}
-.image-width {
-    animation: expand cubic-bezier(0.95, 0.05, 0.795, 0.035) /* forwards */;
-    animation-timeline: view();
-    animation-range-end: 140vh;
-}
 
 /* <---- Animations ----> */
 
