@@ -26,34 +26,43 @@ body {
 h1 {
     font-size: var(--font-header);
     font-weight: 800;
+    margin-block-end: 1rem;
 }
 ul, li, a {
     text-decoration: none;
     list-style-type: none;
     color: var(--clr-text-light);
 }
+a {
+    cursor: pointer;
+}
+a:hover {
+    color: var(--clr-light);
+}
 h2 {
     font-size: 2rem;
     font-weight: 500;
 }
 img {
+    left: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
-    background-size: cover;
     font-style: italic;
 }
 header {
     width: 100%;
     height: 100vh;
-    padding: 2rem;
+    padding: 4rem;
     padding-block-end: 4rem;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: center;
     background-color: var(--clr-dark);
 }
+
 main {
     width: 100%;
 }
@@ -83,6 +92,13 @@ main {
     transform-origin: bottom;
     gap: 1rem;
 }
+.service-wrapper {
+    animation: increase ease-in-out forwards;
+    animation-timeline: view();
+    animation-range-start: cover 20vh;
+    animation-range-end: 130vh;
+    animation-delay: 10000ms;
+}
 .wrapper-0 { order: 6; }
 .wrapper-1 { order: 5; }
 .wrapper-2 { order: 4; }
@@ -92,14 +108,14 @@ main {
 
 .service-title {
     width: 100%;
-    height: 80px;
     display: grid;
     grid-template-columns: 2.5fr 4fr;
     align-items: center;
     border-bottom: var(--border-normal);
 }
 .service-title h2 {
-    font-size: 3rem;
+    font-size: 4rem;
+    margin: 0rem 0rem 1rem 0.5rem;
     grid-area: 1 / 2 / 1 / 3;
     
 }
@@ -108,15 +124,14 @@ main {
     flex-direction: column;
     justify-content: space-between;
 }
+.service-info h3 {
+    font-size: 2rem;
+    font-weight: 500;
+}
 .service-info p {
     max-width: 55ch;
 }
 .image-wrapper {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-}
-.image-wrapper figure {
     height: 100%;
     width: 30%;
     border-radius: 8px;
@@ -125,7 +140,38 @@ main {
     transform-origin: bottom left;
     transition: 280ms ease;
 }
+.image-wrapper {
+    animation: expand ease-in-out forwards;
+    animation-timeline: view();
+    animation-range-end: 140vh;
+}
+.wrapper-height {
+    animation: increase ease forwards;
+    animation-timeline: view();
+    animation-range-start: cover 20vh;
+    animation-range-end: 130vh;
+    animation-delay: 10000ms;
+}
+.image-width {
+    animation: expand cubic-bezier(0.95, 0.05, 0.795, 0.035) /* forwards */;
+    animation-timeline: view();
+    animation-range-end: 140vh;
+}
 
+/* <---- Animations ----> */
+
+@keyframes increase {
+    to {
+        height: 620px;
+    }
+}
+@keyframes expand {
+    to {
+        width: 100%;
+    }
+}
+
+/* <---- Footer ----> */
 
 footer {
     height: 80vh;
@@ -137,14 +183,13 @@ footer {
         "logo";
     gap: 1rem;
     background-color: var(--clr-dark);
-    padding: 2rem 2rem 4rem 2rem;
+    padding: 4rem;
 }
 .footer-nav {
     height: 100%;
     width: 100%;
     display: flex;
     gap: 5rem;
-    padding-block-start: 4rem;
     justify-content: start;
 }
 .footer-nav ul li {
