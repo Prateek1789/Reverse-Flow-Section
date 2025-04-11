@@ -9,4 +9,6 @@ To achieve this animation in pure CSS:
     3. We need to use 'order' property to reverse the order to match the HTML structure. 
     4. Create keyframe animation to animate height of the row container and width of the image.
     5. Then use view() timeline for the animation to attach it to the scroll position and set start and end range for the animation.
-    6. And done 🤩 🎉!! 
+    6. And done 🤩 🎉!!
+
+Turns out animation-timeline: view() and scroll() has a very limited support as of now (11/04/2025), only two major browser supprt this 😅. Looks like I have to create pure JS implimentation for this to run majority of the browser. Lets brainstorm!
